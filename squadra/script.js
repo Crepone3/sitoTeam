@@ -1,6 +1,6 @@
 const staff = [
   {
-    name: "Marco Cala",
+    name: "Marco Calabresi",
     role: "Allenatore",
     instagram: "er_cala",
     img: "img/MarcoMister_Squadra.jpeg"
