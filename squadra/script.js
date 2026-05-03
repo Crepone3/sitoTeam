@@ -101,12 +101,14 @@ const matches = [
     location: "USR, Via Nomentana 858, Roma",
     home: "Nuova Zelanda",
     away: "Polonia",
-    type: "Girone"
+    type: "Girone",
+	status: "upcoming" // oppure "upcoming"
   }
 ];
 
+
 const results = [
-  {
+  /*{
     date: "10 Maggio 2026 • 22:00",
     home: "Nuova Zelanda",
     away: "Polonia",
@@ -117,33 +119,10 @@ const results = [
       "Giocatore 4 (1)",
       "Giocatore 6 (2)"
     ]
-  },
-    {
-    date: "10 Maggio 2026 • 22:00",
-    home: "Nuova Zelanda",
-    away: "Polonia",
-    score: "? - ?",
-	status: "loss", // win | loss | draw
-    scorers: [
-      "Giocatore 1 (2)",
-      "Giocatore 4 (1)",
-      "Giocatore 6 (2)"
-    ]
-  },
-    {
-    date: "10 Maggio 2026 • 22:00",
-    home: "Nuova Zelanda",
-    away: "Polonia",
-    score: "? - ?",
-	status: "win", // win | loss | draw
-    scorers: [
-      "Giocatore 1 (2)",
-      "Giocatore 4 (1)",
-      "Giocatore 6 (2)"
-    ]
   }
-  
+  */
 ];
+
 
 const media = [
   {
@@ -240,7 +219,7 @@ function renderCalendar() {
 
   matches.forEach(m => {
     const div = document.createElement("div");
-    div.className = "match";
+    div.className = "match " + (m.status || "upcoming");
 
     div.innerHTML = `
       <div style="font-size:13px; color:#ffb3b3;">
