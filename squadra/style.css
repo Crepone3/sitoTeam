@@ -196,6 +196,29 @@ header img {
   margin-top: 12px;
 }
 
+.score {
+  transition: all 0.3s ease;
+}
+
+/* WIN */
+.match.win .score {
+  color: #00ff7f;
+  text-shadow: 0 0 10px rgba(0,255,127,0.6);
+}
+
+/* LOSS */
+.match.loss .score {
+  color: #ff3b3b;
+  text-shadow: 0 0 10px rgba(255,59,59,0.6);
+}
+
+/* DRAW */
+.match.draw .score {
+  color: #ffd24d;
+  text-shadow: 0 0 10px rgba(255,210,77,0.6);
+}
+
+
 .match.win {
   border-left: 4px solid #00ff7f;
   box-shadow: 0 0 18px rgba(0, 255, 127, 0.25);

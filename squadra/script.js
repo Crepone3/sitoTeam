@@ -283,7 +283,7 @@ function renderResults() {
       </div>
 
       <div style="font-size:20px; font-weight:bold; margin-top:6px;">
-        ${r.home} <span style="color:crimson;">${r.score}</span> ${r.away}
+        ${r.home} <span class="score">${r.score}</span> ${r.away}
       </div>
 
       <div class="details">
