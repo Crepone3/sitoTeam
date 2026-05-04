@@ -21,76 +21,84 @@ const staff = [
 
 const players = [
   {
-    name: "Coming Soon",
+    name: "Federico Sdogati",
     role: "Portiere",
-    number: 1,
+    number: 99,
     value: 0,
     matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
+	instagram: "federico.sdogati",
+	captain: false,
+    img: "img/FefoPresentazione.jpeg"
   },
   {
-    name: "Coming Soon",
-    role: "Difensore",
-    number: 3,
-    value: 0,
-    matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
-  },
-  {
-    name: "Coming Soon",
-    role: "Difensore",
-    number: 4,
-    value: 0,
-    matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
-  },
-  {
-    name: "Coming Soon",
+    name: "Riccardo Petrucci",
     role: "Difensore",
     number: 6,
     value: 0,
     matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
+	instagram: "riccardopetrucci__",
+	captain: false,
+    img: "img/RiccardinoPresentazione.jpeg"
   },
   {
-    name: "Coming Soon",
+    name: "Gabriele Collina",
+    role: "Difensore",
+    number: 4,
+    value: 0,
+    matches: 0,
+	instagram: "gabriele_collina__",
+	captain: false,
+    img: "img/GabryPresentazione.jpeg"
+  },
+  {
+    name: "Alessio Sinato",
     role: "Ala",
-    number: 11,
+    number: 15,
     value: 0,
     matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
+	instagram: "alessiosinato",
+	captain: false,
+    img: "img/SicPresentazione.jpeg"
   },
   {
-    name: "Coming Soon",
+    name: "Gioele Di Giosia",
     role: "Ala",
-    number: 7,
-    value: 0,
-    matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
-  },
-  {
-    name: "Coming Soon",
-    role: "Attaccante",
-    number: 9,
-    value: 0,
-    matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
-  },
-  {
-    name: "Coming Soon",
-    role: "Attaccante",
     number: 10,
     value: 0,
     matches: 0,
-	instagram: "polonia_c5",
-    img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTkzNGR1d2R5bWVvdTJpbXQ4ZWJ5YTlqbzlxdDAzMnVrZHFjdmsxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqmXowsvx0yqn3RnfK/giphy.gif"
+	instagram: "_giioele_",
+	captain: false,
+    img: "img/GioelePresentazione.jpeg"
+  },
+  {
+    name: "Alessandro Pinti",
+    role: "Ala",
+    number: 9,
+    value: 0,
+    matches: 0,
+	instagram: "alessandro_pinti",
+	captain: false,
+    img: "img/peppinoPresentazione.jpeg"
+  },
+  {
+    name: "Gabriele D'Ulisse",
+    role: "Attacante",
+    number: 11,
+    value: 0,
+    matches: 0,
+	instagram: "gamba17._",
+	captain: true,
+    img: "img/GambaPresentazione.jpeg"
+  },
+  {
+    name: "Valentino Tocci",
+    role: "Attaccante",
+    number: 17,
+    value: 0,
+    matches: 0,
+	instagram: "_valentino.tocci_",
+	captain: false,
+    img: "img/ValentinoPresentazione.jpeg"
   }
   
 ];
@@ -198,8 +206,11 @@ function renderPlayers() {
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:18px; height:18px;">
         </a>
       </h3>
-
-      <p>${p.role}</p>
+	  
+	  <p class="role-line">
+		  ${p.role}
+		  ${p.captain ? '<span class="captain-band-mini">C</span>' : ""}
+		</p>
     `;
 
     // 👇 CLICK DINAMICO
@@ -380,22 +391,39 @@ function toggle(el) {
   d.style.display = (d.style.display === "block") ? "none" : "block";
 }
 
+function getRoleIcon(role) {
+  switch (role.toLowerCase()) {
+    case "portiere":
+      return "🧤";
+    case "difensore":
+      return "🛡️";
+    case "ala":
+      return "🏃‍♂️";
+    case "attaccante":
+      return "⚔️";
+    default:
+      return "👤";
+  }
+}
 function openPlayer(name, role, numeroMaglietta, value, matches) {
   document.getElementById("popup").style.display = "flex";
 
+  const roleLower = role.toLowerCase();
+
   document.getElementById("name").innerText = name;
-  document.getElementById("role").innerText = role;
+
+  document.getElementById("roleLine").innerHTML =
+    `${getRoleIcon(role)} Ruolo: <b>${role}</b>`;
+
   document.getElementById("numeroMaglietta").innerText = numeroMaglietta;
-
   document.getElementById("matches").innerText = matches;
-  
 
-  if (role === "Portiere") {
+  if (roleLower === "portiere") {
     document.getElementById("statLine").innerHTML =
-      "🧤 Gol subiti: <b>" + value + "</b>";
+      `🥅 Gol subiti: <b>${value}</b>`;
   } else {
     document.getElementById("statLine").innerHTML =
-      "⚽ Gol fatti: <b>" + value + "</b>";
+      `⚽ Gol fatti: <b>${value}</b>`;
   }
 }
 

@@ -258,6 +258,32 @@ header img {
   cursor: default;
 }
 
+.role-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+
+/* vera “fascia” stilizzata */
+.captain-band-mini {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  padding: 2px 5px;
+
+  color: #111;
+  background: linear-gradient(90deg, #f1c40f, #ffd700, #f1c40f);
+
+  border-radius: 4px;
+
+  text-transform: uppercase;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
 
 .details {
   display: block;
