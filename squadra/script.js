@@ -314,7 +314,7 @@ window.addEventListener("load", () => {
   renderPlayers();
   renderCalendar();
   renderResults();
-  renderMedia();
+  //renderMedia();
 });
 
 
