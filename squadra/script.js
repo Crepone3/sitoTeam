@@ -25,7 +25,7 @@ const players = [
     role: "Portiere",
     number: 99,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "federico.sdogati",
 	captain: false,
     img: "img/FefoPresentazione.jpeg"
@@ -35,7 +35,7 @@ const players = [
     role: "Difensore",
     number: 6,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "riccardopetrucci__",
 	captain: false,
     img: "img/RiccardinoPresentazione.jpeg"
@@ -45,7 +45,7 @@ const players = [
     role: "Difensore",
     number: 4,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "gabriele_collina__",
 	captain: false,
     img: "img/GabryPresentazione.jpeg"
@@ -55,7 +55,7 @@ const players = [
     role: "Ala",
     number: 15,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "alessiosinato",
 	captain: false,
     img: "img/SicPresentazione.jpeg"
@@ -65,7 +65,7 @@ const players = [
     role: "Ala",
     number: 10,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "_giioele_",
 	captain: false,
     img: "img/GioelePresentazione.jpeg"
@@ -75,7 +75,7 @@ const players = [
     role: "Ala",
     number: 9,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "alessandro_pinti",
 	captain: false,
     img: "img/peppinoPresentazione.jpeg"
@@ -84,8 +84,8 @@ const players = [
     name: "Gabriele D'Ulisse",
     role: "Attacante",
     number: 11,
-    value: 0,
-    matches: 0,
+    value: 1,
+    matches: 1,
 	instagram: "gamba17._",
 	captain: true,
     img: "img/GambaPresentazione.jpeg"
@@ -95,7 +95,7 @@ const players = [
     role: "Attaccante",
     number: 17,
     value: 0,
-    matches: 0,
+    matches: 1,
 	instagram: "_valentino.tocci_",
 	captain: false,
     img: "img/ValentinoPresentazione.jpeg"
@@ -104,31 +104,36 @@ const players = [
 ];
 
 const matches = [
+   {
+    date: "11 Maggio 2026 • 20:00",
+    location: "USR, Via Nomentana 858, Roma",
+    home: "Paraguay",
+    away: "Polonia",
+    type: "Girone",
+	status: "upcoming" // upcoming | played
+  },
   {
     date: "10 Maggio 2026 • 22:00",
     location: "USR, Via Nomentana 858, Roma",
     home: "Nuova Zelanda",
     away: "Polonia",
     type: "Girone",
-	status: "upcoming" // oppure "upcoming"
+	status: "played" // upcoming | played
   }
 ];
 
 
 const results = [
-  /*{
+  {
     date: "10 Maggio 2026 • 22:00",
     home: "Nuova Zelanda",
     away: "Polonia",
-    score: "? - ?",
-	status: "draw", // win | loss | draw
+    score: "3 - 1",
+	status: "loss", // win | loss | draw
     scorers: [
-      "Giocatore 1 (2)",
-      "Giocatore 4 (1)",
-      "Giocatore 6 (2)"
+      "Gabriele D'Ulisse"
     ]
   }
-  */
 ];
 
 
