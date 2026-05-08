@@ -339,15 +339,32 @@ function renderStats() {
   const container = document.getElementById("statsTable");
   if (!container) return;
 
-  let sorted = [...players].sort((a, b) => {
+let sorted = [...players].sort((a, b) => {
 
-    let valA = a[sortState.key];
-    let valB = b[sortState.key];
+  let valA = Number(a[sortState.key]) || 0;
+  let valB = Number(b[sortState.key]) || 0;
 
-    return sortState.dir === "desc"
+  // 1️⃣ confronto principale
+  let diff =
+    sortState.dir === "desc"
       ? valB - valA
       : valA - valB;
-  });
+
+  // 2️⃣ tie-breaker: gol → poi presenze → poi nome
+  if (diff === 0) {
+    if (sortState.key !== "value") {
+      return (b.value || 0) - (a.value || 0);
+    }
+
+    if ((b.matches || 0) !== (a.matches || 0)) {
+      return (b.matches || 0) - (a.matches || 0);
+    }
+
+    return a.name.localeCompare(b.name);
+  }
+
+  return diff;
+});
 
   container.innerHTML = sorted.map((p, i) => `
 
@@ -370,12 +387,10 @@ function renderStats() {
 
 function updateSortIcons() {
 
-  const keys = ["value", "matches", "yellow", "red"];
+  const keys = ["matches", "value", "yellow", "red"];
 
   keys.forEach(k => {
-
     const el = document.getElementById("icon-" + k);
-
     if (!el) return;
 
     if (sortState.key !== k) {
@@ -384,6 +399,7 @@ function updateSortIcons() {
       el.innerHTML = sortState.dir === "desc" ? " ↓" : " ↑";
     }
   });
+
 }
 
 function getStatIcon(type) {
@@ -420,7 +436,7 @@ function sortStats(type) {
 }
 
 let sortState = {
-  key: "value",
+  key: "matches",
   dir: "desc"
 };
 
