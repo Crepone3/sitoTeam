@@ -27,8 +27,8 @@
   <div class="tabs">
     <div class="tab active" onclick="openTab('giocatori', this)">Squadra</div>
     <div class="tab" onclick="openTab('calendario', this)">Calendario</div>
-    <div class="tab" onclick="openTab('risultati', this)">Risultati</div>
 	<!-- <div class="tab" onclick="openTab('media', this)">Media</div> -->
+	<div class="tab" onclick="openTab('statistiche', this)">Statistiche</div>
   </div>
 
   <!-- GIOCATORI -->
@@ -70,23 +70,40 @@
 
 </div>
 
+<!-- STATISTICHE -->
+<div id="statistiche" class="content">
 
+  <h2>Statistiche Giocatori</h2>
 
-<!-- RISULTATI -->
-<div id="risultati" class="content">
+  <div class="stats-table">
 
-<div class="insta">
-  <a href="https://www.instagram.com/polonia_c5" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-    Seguici su Instagram
-  </a>
-</div>
+	<div class="stats-header">
 
-  <h2>Risultati Partite</h2>
+	  <span>#</span>
+	  <span>Giocatore</span>
 
+	  <span onclick="sortTable('matches')">
+		🏟️ <span id="icon-matches"></span>
+	  </span>
+	  
+	  <span onclick="sortTable('value')">
+		⚽ <span id="icon-value"></span>
+	  </span>
 
-  <div id="resultsContainer"></div>
+	  <span onclick="sortTable('yellow')">
+		🟨 <span id="icon-yellow"></span>
+	  </span>
 
+	  <span onclick="sortTable('red')">
+		🟥 <span id="icon-red"></span>
+	  </span>
+
+	</div>
+
+    <!-- 👇 QUESTO È FONDAMENTALE -->
+    <div id="statsTable"></div>
+
+  </div>
 
 </div>
 
@@ -131,6 +148,10 @@
     <p>🏟️ Partite: <b id="matches"></b></p>
 
     <p id="statLine"></p>
+	
+	<p>🟨 Cartellini Gialli: <b id="yellowCards"></b></p>
+
+	<p>🟥 Cartellini Rossi: <b id="redCards"></b></p>
 
   </div>
 </div>

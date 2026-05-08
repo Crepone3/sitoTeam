@@ -28,7 +28,9 @@ const players = [
     matches: 1,
 	instagram: "federico.sdogati",
 	captain: false,
-    img: "img/FefoPresentazione.jpeg"
+    img: "img/FefoPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Riccardo Petrucci",
@@ -38,7 +40,9 @@ const players = [
     matches: 1,
 	instagram: "riccardopetrucci__",
 	captain: false,
-    img: "img/RiccardinoPresentazione.jpeg"
+    img: "img/RiccardinoPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Gabriele Collina",
@@ -48,7 +52,9 @@ const players = [
     matches: 1,
 	instagram: "gabriele_collina__",
 	captain: false,
-    img: "img/GabryPresentazione.jpeg"
+    img: "img/GabryPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Alessio Sinato",
@@ -58,7 +64,9 @@ const players = [
     matches: 1,
 	instagram: "alessiosinato",
 	captain: false,
-    img: "img/SicPresentazione.jpeg"
+    img: "img/SicPresentazione.jpeg",
+	yellow: 0,
+	red: 1
   },
   {
     name: "Gioele Di Giosia",
@@ -68,7 +76,9 @@ const players = [
     matches: 1,
 	instagram: "_giioele_",
 	captain: false,
-    img: "img/GioelePresentazione.jpeg"
+    img: "img/GioelePresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Alessandro Pinti",
@@ -78,7 +88,9 @@ const players = [
     matches: 1,
 	instagram: "alessandro_pinti",
 	captain: false,
-    img: "img/peppinoPresentazione.jpeg"
+    img: "img/peppinoPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Gabriele D'Ulisse",
@@ -88,7 +100,9 @@ const players = [
     matches: 1,
 	instagram: "gamba17._",
 	captain: true,
-    img: "img/GambaPresentazione.jpeg"
+    img: "img/GambaPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   },
   {
     name: "Valentino Tocci",
@@ -98,18 +112,20 @@ const players = [
     matches: 1,
 	instagram: "_valentino.tocci_",
 	captain: false,
-    img: "img/ValentinoPresentazione.jpeg"
+    img: "img/ValentinoPresentazione.jpeg",
+	yellow: 0,
+	red: 0
   }
   
 ];
 
 const matches = [
    {
-    date: "11 Maggio 2026 • 20:00",
-    location: "USR, Via Nomentana 858, Roma",
+    date: "Da definire",
+    location: "Da definire",
     home: "Paraguay",
     away: "Polonia",
-    type: "Girone",
+    type: "2° Partita Girone A",
 	status: "upcoming" // upcoming | played
   },
   {
@@ -117,25 +133,17 @@ const matches = [
     location: "USR, Via Nomentana 858, Roma",
     home: "Nuova Zelanda",
     away: "Polonia",
-    type: "Girone",
-	status: "played" // upcoming | played
-  }
-];
-
-
-const results = [
-  {
-    date: "10 Maggio 2026 • 22:00",
-    home: "Nuova Zelanda",
-    away: "Polonia",
     score: "3 - 1",
-	status: "loss", // win | loss | draw
+    result: "loss", // win | loss | draw
     scorers: [
-      "Gabriele D'Ulisse"
-    ]
+      "⚽ Gabriele D'Ulisse",
+	  "🟥 Alessio Sinato",
+    ],
+    type: "1° Partita Girone A",
+    status: "played"
   }
+  
 ];
-
 
 const media = [
   {
@@ -220,7 +228,7 @@ function renderPlayers() {
 
     // 👇 CLICK DINAMICO
     inner.addEventListener("click", () => {
-      openPlayer(p.name, p.role, p.number, p.value, p.matches);
+      openPlayer(p);
     });
 
     card.appendChild(inner);
@@ -234,62 +242,72 @@ function renderCalendar() {
   container.innerHTML = "";
 
   matches.forEach(m => {
+
     const div = document.createElement("div");
-    div.className = "match " + (m.status || "upcoming");
 
-    div.innerHTML = `
-      <div style="font-size:13px; color:#ffb3b3;">
-        📅 ${m.date}
-      </div>
-
-      <div style="margin:8px 0; font-size:14px; color:#ccc;">
-        📍 ${m.location}
-      </div>
-
-      <div style="font-size:20px; font-weight:bold;">
-        ${m.home} <span style="color:crimson;">VS</span> ${m.away}
-      </div>
-
-      <div style="margin-top:8px; font-size:12px; color:#aaa;">
-        🏟️ ${m.type}
-      </div>
-    `;
-
-    container.appendChild(div);
-  });
-}
-
-function renderResults() {
-  const container = document.getElementById("resultsContainer");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  results.forEach(r => {
-    const div = document.createElement("div");
     div.className = "match";
 
-    // 🔥 aggiunge classe stato (win / loss / draw)
-    div.classList.add(r.status);
+    // PARTITA GIOCATA
+    if (m.status === "played") {
 
-    div.innerHTML = `
-      <div style="font-size:13px; color:#ffb3b3;">
-        📅 ${r.date}
-      </div>
+      div.classList.add(m.result);
 
-      <div style="font-size:20px; font-weight:bold; margin-top:6px;">
-        ${r.home} <span class="score">${r.score}</span> ${r.away}
-      </div>
+      div.innerHTML = `
+        <div style="font-size:13px; color:#ffb3b3;">
+          📅 ${m.date}
+        </div>
 
-      <div class="details">
-        ${r.scorers.map(s => "⚽ " + s).join("<br>")}
-      </div>
-    `;
+        <div style="margin:8px 0; font-size:14px; color:#ccc;">
+          📍 ${m.location}
+        </div>
 
-    // toggle apertura dettagli
-    div.addEventListener("click", () => {
-      div.classList.toggle("open");
-    });
+        <div style="font-size:22px; font-weight:bold;">
+          ${m.home}
+          <span class="score">${m.score}</span>
+          ${m.away}
+        </div>
+
+        <div style="margin-top:8px; font-size:12px; color:#aaa;">
+          🏟️ ${m.type}
+        </div>
+
+        <div class="details">
+          ${m.scorers.map(s => s).join("<br>")}
+        </div>
+      `;
+
+      // CLICK APRI DETTAGLI
+      div.addEventListener("click", () => {
+        div.classList.toggle("open");
+      });
+
+    }
+
+    // PARTITA FUTURA
+    else {
+
+	  div.classList.add("upcoming");
+	  
+      div.innerHTML = `
+        <div style="font-size:13px; color:#ffb3b3;">
+          📅 ${m.date}
+        </div>
+
+        <div style="margin:8px 0; font-size:14px; color:#ccc;">
+          📍 ${m.location}
+        </div>
+
+        <div style="font-size:20px; font-weight:bold;">
+          ${m.home}
+          <span style="color:crimson;">VS</span>
+          ${m.away}
+        </div>
+
+        <div style="margin-top:8px; font-size:12px; color:#aaa;">
+          🏟️ ${m.type}
+        </div>
+      `;
+    }
 
     container.appendChild(div);
   });
@@ -314,11 +332,116 @@ function renderMedia() {
   });
 }
 
+let currentStat = "matches";
+
+function renderStats() {
+
+  const container = document.getElementById("statsTable");
+  if (!container) return;
+
+  let sorted = [...players].sort((a, b) => {
+
+    let valA = a[sortState.key];
+    let valB = b[sortState.key];
+
+    return sortState.dir === "desc"
+      ? valB - valA
+      : valA - valB;
+  });
+
+  container.innerHTML = sorted.map((p, i) => `
+
+    <div class="stats-row">
+
+      <span>${i + 1}</span>
+      <span class="player-name">${p.name}</span>
+
+      <span>${p.matches}</span>
+      <span>${p.value}</span>
+      <span>${p.yellow}</span>
+      <span>${p.red}</span>
+
+    </div>
+
+  `).join("");
+
+  updateSortIcons();
+}
+
+function updateSortIcons() {
+
+  const keys = ["value", "matches", "yellow", "red"];
+
+  keys.forEach(k => {
+
+    const el = document.getElementById("icon-" + k);
+
+    if (!el) return;
+
+    if (sortState.key !== k) {
+      el.innerHTML = "";
+    } else {
+      el.innerHTML = sortState.dir === "desc" ? " ↓" : " ↑";
+    }
+  });
+}
+
+function getStatIcon(type) {
+
+  switch(type) {
+
+    case "value":
+      return "⚽";
+
+    case "matches":
+      return "🏟️";
+
+    case "yellow":
+      return "🟨";
+
+    case "red":
+      return "🟥";
+
+    default:
+      return "📊";
+  }
+}
+
+function sortStats(type) {
+
+  currentStat = type;
+
+  renderStats(type);
+
+  document.querySelectorAll(".stats-btn")
+    .forEach(btn => btn.classList.remove("active-stat"));
+
+  event.target.classList.add("active-stat");
+}
+
+let sortState = {
+  key: "value",
+  dir: "desc"
+};
+
+function sortTable(key) {
+
+  if (sortState.key === key) {
+    // se clicchi stessa colonna → cambia direzione
+    sortState.dir = sortState.dir === "desc" ? "asc" : "desc";
+  } else {
+    sortState.key = key;
+    sortState.dir = "desc";
+  }
+
+  renderStats();
+}
+
 window.addEventListener("load", () => {
   renderStaff();
   renderPlayers();
   renderCalendar();
-  renderResults();
+  renderStats();
   //renderMedia();
 });
 
@@ -351,25 +474,29 @@ document.addEventListener("touchend", function(e) {
 });
 
 function handleSwipe() {
+
   let diff = startX - endX;
 
   if (Math.abs(diff) < 50) return;
 
-  let tabs = ["giocatori", "calendario", "risultati", "media"];
+  let tabs = ["giocatori", "calendario", "statistiche"];
 
   let currentIndex = tabs.findIndex(id =>
-    document.getElementById(id).classList.contains("active")
+    document.getElementById(id)?.classList.contains("active")
   );
+
+  // ❌ sicurezza: se non trova la tab, esce
+  if (currentIndex === -1) return;
 
   if (diff > 0) {
     // swipe sinistra
     if (currentIndex < tabs.length - 1) {
-      openTabById(tabs[currentIndex + 1]);
+      openTabSafe(tabs[currentIndex + 1]);
     }
   } else {
     // swipe destra
     if (currentIndex > 0) {
-      openTabById(tabs[currentIndex - 1]);
+      openTabSafe(tabs[currentIndex - 1]);
     }
   }
 }
@@ -410,26 +537,31 @@ function getRoleIcon(role) {
       return "👤";
   }
 }
-function openPlayer(name, role, numeroMaglietta, value, matches) {
+function openPlayer(player) {
   document.getElementById("popup").style.display = "flex";
 
-  const roleLower = role.toLowerCase();
+  const roleLower = player.role.toLowerCase();
 
-  document.getElementById("name").innerText = name;
+  document.getElementById("name").innerText = player.name;
 
   document.getElementById("roleLine").innerHTML =
-    `${getRoleIcon(role)} Ruolo: <b>${role}</b>`;
+    `${getRoleIcon(player.role)} Ruolo: <b>${player.role}</b>`;
 
-  document.getElementById("numeroMaglietta").innerText = numeroMaglietta;
-  document.getElementById("matches").innerText = matches;
+  document.getElementById("numeroMaglietta").innerText = player.number;
+  document.getElementById("matches").innerText = player.matches;
 
   if (roleLower === "portiere") {
     document.getElementById("statLine").innerHTML =
-      `🥅 Gol subiti: <b>${value}</b>`;
+      `🥅 Gol subiti: <b>${player.value}</b>`;
   } else {
     document.getElementById("statLine").innerHTML =
-      `⚽ Gol fatti: <b>${value}</b>`;
+      `⚽ Gol fatti: <b>${player.value}</b>`;
   }
+  
+  document.getElementById("yellowCards").innerText = player.yellow;
+
+  document.getElementById("redCards").innerText = player.red;
+  
 }
 
 function closePopup(e) {

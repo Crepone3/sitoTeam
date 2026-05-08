@@ -175,13 +175,14 @@ header img {
   margin: 10px 0;
   padding: 15px;
   border-radius: 10px;
-  border-left: 4px solid crimson;
-  cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  border-left: 4px solid transparent;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.match {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.match.upcoming {
+  border-left: 4px solid rgba(255,255,255,0.15);
 }
 
 .match.open {
@@ -217,7 +218,6 @@ header img {
   color: #ffd24d;
   text-shadow: 0 0 10px rgba(255,210,77,0.6);
 }
-
 
 .match.win {
   border-left: 4px solid #00ff7f;
@@ -332,6 +332,112 @@ header img {
   cursor: pointer;
   font-size: 20px;
 }
+
+.stats-box {
+  background: rgba(255,255,255,0.06);
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255,0,0,0.2);
+}
+
+.stats-box h3 {
+  margin-top: 0;
+  color: white;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.stats-row:last-child {
+  border-bottom: none;
+}
+
+.stats-filters {
+
+  display: flex;
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 20px;
+}
+
+.stats-btn {
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,0,0,0.2);
+
+  color: white;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.stats-btn:hover {
+
+  background: crimson;
+}
+
+.active-stat {
+
+  background: crimson;
+
+  box-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
+.stats-table {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,0,0,0.2);
+}
+
+.stats-header,
+.stats-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 50px 50px 50px 50px;
+  align-items: center;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.stats-header {
+  background: rgba(255,0,0,0.15);
+  font-weight: bold;
+  color: white;
+}
+
+.stats-row {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  transition: 0.2s;
+}
+
+.stats-row:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.player-name {
+  text-align: left;
+  padding-left: 10px;
+}
+
 
 @media (max-width: 600px) {
 
