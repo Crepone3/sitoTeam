@@ -121,15 +121,15 @@ const players = [
 
 const matches = [
    {
-    date: "Da definire",
-    location: "Da definire",
+    date: "11 Maggio 2026 • 20:00",
+    location: "USR, Via Nomentana 858, Roma",
     home: "Paraguay",
     away: "Polonia",
     type: "2° Partita Girone A",
 	status: "upcoming" // upcoming | played
   },
   {
-    date: "10 Maggio 2026 • 22:00",
+    date: "6 Maggio 2026 • 22:00",
     location: "USR, Via Nomentana 858, Roma",
     home: "Nuova Zelanda",
     away: "Polonia",
