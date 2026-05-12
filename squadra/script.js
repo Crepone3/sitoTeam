@@ -25,7 +25,7 @@ const players = [
     role: "Portiere",
     number: 99,
     value: 0,
-    matches: 1,
+    matches: 2,
 	instagram: "federico.sdogati",
 	captain: false,
     img: "img/FefoPresentazione.jpeg",
@@ -36,8 +36,8 @@ const players = [
     name: "Riccardo Petrucci",
     role: "Difensore",
     number: 6,
-    value: 0,
-    matches: 1,
+    value: 1,
+    matches: 2,
 	instagram: "riccardopetrucci__",
 	captain: false,
     img: "img/RiccardinoPresentazione.jpeg",
@@ -49,7 +49,7 @@ const players = [
     role: "Difensore",
     number: 4,
     value: 0,
-    matches: 1,
+    matches: 2,
 	instagram: "gabriele_collina__",
 	captain: false,
     img: "img/GabryPresentazione.jpeg",
@@ -84,8 +84,8 @@ const players = [
     name: "Alessandro Pinti",
     role: "Ala",
     number: 9,
-    value: 0,
-    matches: 1,
+    value: 1,
+    matches: 2,
 	instagram: "alessandro_pinti",
 	captain: false,
     img: "img/peppinoPresentazione.jpeg",
@@ -96,8 +96,8 @@ const players = [
     name: "Gabriele D'Ulisse",
     role: "Attacante",
     number: 11,
-    value: 1,
-    matches: 1,
+    value: 2,
+    matches: 2,
 	instagram: "gamba17._",
 	captain: true,
     img: "img/GambaPresentazione.jpeg",
@@ -109,10 +109,22 @@ const players = [
     role: "Attaccante",
     number: 17,
     value: 0,
-    matches: 1,
+    matches: 2,
 	instagram: "_valentino.tocci_",
 	captain: false,
     img: "img/ValentinoPresentazione.jpeg",
+	yellow: 0,
+	red: 0
+  },
+  {
+    name: "Gabriele Coscarella",
+    role: "Attaccante",
+    number: 22,
+    value: 1,
+    matches: 1,
+    instagram: "gabriele_coscarella",
+	captain: false,
+    img: "img/CoscaViceMister_Squadra.jpeg",
 	yellow: 0,
 	red: 0
   }
@@ -120,13 +132,29 @@ const players = [
 ];
 
 const matches = [
-   {
+   /*{
+    date: "11 Maggio 2026 • 20:00",
+    location: "USR, Via Nomentana 858, Roma",
+    home: "Camerun",
+    away: "Polonia",
+    type: "2° Partita Girone A",
+	status: "upcoming" // upcoming | played
+  },*/
+  {
     date: "11 Maggio 2026 • 20:00",
     location: "USR, Via Nomentana 858, Roma",
     home: "Paraguay",
     away: "Polonia",
+    score: "3 - 4",
+    result: "win", // win | loss | draw
+    scorers: [
+	  "⚽ Riccardo Petrucci",
+	  "⚽ Alessandro Pinti",
+	  "⚽ Gabriele D'Ulisse",
+	  "⚽ Gabriele Coscarella",
+    ],
     type: "2° Partita Girone A",
-	status: "upcoming" // upcoming | played
+    status: "played"
   },
   {
     date: "6 Maggio 2026 • 22:00",
